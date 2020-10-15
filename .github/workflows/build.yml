@@ -18,7 +18,7 @@ jobs:
       uses: ilammy/msvc-dev-cmd@v1.4.1
       
     - name: Build with CI build script
-      run: ant generate-all && ant compile && ant compile_native_es
+      run: mkdir bin && ant generate-all && ant compile && ant compile_native_es
 
     - name: Upload build output
       uses: actions/upload-artifact@v1
