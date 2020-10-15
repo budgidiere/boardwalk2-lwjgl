@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: windows-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -14,11 +14,15 @@ jobs:
       with:
         java-version: 1.8
 
+    - name: Enable Developer Command Prompt
+      uses: ilammy/msvc-dev-cmd@v1.4.1
+      
     - name: Build with CI build script
-      run: ./ci_build.bash
+      run: ant generate-all && ant compile && ant compile_native_es
 
     - name: Upload build output
       uses: actions/upload-artifact@v1
       with:
         name: lwjgl3-windows-natives
         path: windows_build/libs
+      
