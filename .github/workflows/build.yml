@@ -18,7 +18,7 @@ jobs:
       uses: ilammy/msvc-dev-cmd@v1.4.1
       
     - name: Build with CI build script
-      run: mkdir bin && ant generate-all && ant compile && ant compile_native
+      run: cd C:\hostedtoolcache\windows\jdk\8.0.265\x64 && ls && mkdir bin && ant generate-all && ant compile && ant compile_native
 
     - name: Upload build output
       uses: actions/upload-artifact@v1
