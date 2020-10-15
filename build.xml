@@ -486,7 +486,7 @@
 	</target>
 
 	<target name="compile_native" depends="-initialize, headers, touch-version, version-mismatch" description="Compiles the native files">
-<!--		<condition property="lwjgl.platform.windows">
+		<condition property="lwjgl.platform.windows">
 			<os family="windows" />
 		</condition>
 		<antcall target="-compile_native_win32" />
@@ -514,7 +514,7 @@
 		<condition property="lwjgl.platform.macosx">
 			<os name="Mac OS X" />
 		</condition>
-		<antcall target="-compile_native_macosx" />-->
+		<antcall target="-compile_native_macosx" />
 		<property name="lwjgl.platform.potato" value="true"/>
 		<antcall target="-compile_native_potato" />
 	</target>
